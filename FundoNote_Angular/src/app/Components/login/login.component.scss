@@ -1,0 +1,110 @@
+
+.Main-body{
+    display: flex;
+    flex-direction: row;
+}
+
+.MainContainer{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #9c9c9c;
+    border-radius: 10px;
+    width: 430px;
+    padding: 20px;
+    height: 60%;
+    background: #fff;
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 20px;
+    font-size: 20px;
+	font-family: "roboto", "Noto Sans Myanmar UI", arial, sans-serif;
+}
+
+.form-logo{
+    font-size: 30px;
+    line-height: 50px;
+    font-family: "Georgia", "Courier New", monospace;
+}
+
+.header-text{
+    text-align: center;
+    line-height: 55px;
+    font-size: 25px;
+}
+
+
+.LoginContainer{
+    width: 100%; 
+}
+
+.form-label{
+    font-size: 15px; // example
+}
+
+.form-input{
+    font-size: 17px;
+}
+
+.form-field{
+    width: 90%;
+}
+
+.form-login{
+    padding-left: 10%;
+}
+.form-checkbox{
+    padding: 5px 0px 0px 4px;
+    margin-top: auto;
+    font-size: 13px;
+}
+
+.form-btn{
+    display: flex;
+    column-gap: 30%;
+    padding-top: 10%;
+}
+
+::ng-deep {
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+       color: darkgray;
+       font-size: 25px;
+    }
+ }
+
+ mat-error{
+    font-size: 10px;
+ }
+
+ mat-hint{
+    font-size: 12px;
+ }
+
+ .footer{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 87%;
+    left: 85%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    column-gap: 6.5%;
+    color: gray;
+}
+
+.footer-dropdown{
+    font-size: 11px;
+    
+}
+
+.footer-link{
+    font-size: 11px;
+}

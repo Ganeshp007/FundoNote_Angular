@@ -7,6 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSelectModule} from '@angular/material/select';
 import {FormsModule} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -14,12 +15,14 @@ import { AppComponent } from './app.component';
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { LoginComponent } from './Components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    ForgetPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatDividerModule,
     MatCheckboxModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

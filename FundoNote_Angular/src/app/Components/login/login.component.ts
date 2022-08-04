@@ -12,33 +12,33 @@ interface Language{
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  registerForm!: FormGroup;
+  LoginForm!: FormGroup;
   submitted = false;
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-      this.registerForm = this.formBuilder.group({
+      this.LoginForm = this.formBuilder.group({
           Email: ['', [Validators.required, Validators.email]],
           Password: ['', [Validators.required, Validators.minLength(8)]],
       });
   }
   // convenience getter for easy access to form fields
-  get f() { return this.registerForm.controls; }
+  get f() { return this.LoginForm.controls; }
 
   onSubmit() {
       this.submitted = true;
 
       // stop here if form is invalid
-      if (this.registerForm.invalid) {
+      if (this.LoginForm.invalid) {
           return;
       }
-
+      console.log(this.LoginForm.value);
   }
 
   onReset() {
       this.submitted = false;
-      this.registerForm.reset();
+      this.LoginForm.reset();
   }
 
   selectedValue!: string;

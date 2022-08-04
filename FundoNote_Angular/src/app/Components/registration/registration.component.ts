@@ -38,7 +38,7 @@ export class RegistrationComponent implements OnInit {
         if (this.registerForm.invalid) {
             return;
         }
-
+        console.log(this.registerForm.value);
     }
 
     onReset() {

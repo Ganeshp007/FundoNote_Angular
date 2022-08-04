@@ -19,7 +19,7 @@
           </div>
           
         </div>
-        <form class="form-login" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <form class="form-login" [formGroup]="LoginForm" (ngSubmit)="onSubmit()">
             <div>
                 <div class="Email">
                     <mat-form-field class="form-field" appearance="outline">
@@ -38,14 +38,14 @@
             </div>  
           <mat-checkbox class="form-checkbox">Show Password</mat-checkbox>
           <div style="padding: 18px 0px 0px 0px;">
-            <a mat-button color="primary" style="padding: 0px;" href="http://localhost:4200/forgotpassword" >Forgot Password </a>
+            <a mat-button color="primary" style="padding: 0px;" routerLink="/forgotpassword" >Forgot Password?</a>
           </div>
           <section class="form-btn">  
             <div>
-              <a mat-stroked-button color="primary" href="http://localhost:4200/register">Create Account</a>
+              <a mat-stroked-button color="primary" routerLink="/register">Create Account</a>
             </div>
             <div >
-              <a mat-raised-button color="primary" style="width: 100px;" href="">Login</a>
+              <button mat-raised-button color="primary" style="width: 100px;" >Login</button>
             </div>
           </section>
         </form>

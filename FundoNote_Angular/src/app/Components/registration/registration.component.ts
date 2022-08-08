@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/Services/userService/user.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 interface Language{
   value: string;
@@ -16,8 +18,10 @@ export class RegistrationComponent implements OnInit {
 
     registerForm!: FormGroup;
     submitted = false;
+    hide: boolean = true;
+    durationInSeconds = 5;
 
-    constructor(private formBuilder: FormBuilder) { }
+    constructor(private formBuilder: FormBuilder, private user: UserService,private _snackbar:MatSnackBar) { }
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
@@ -39,11 +43,32 @@ export class RegistrationComponent implements OnInit {
             return;
         }
         console.log(this.registerForm.value);
+        let reqdata={
+          Firstname: this.registerForm.value.FirstName,
+          Lastname: this.registerForm.value.LastName,
+          Email: this.registerForm.value.Email,
+          Password: this.registerForm.value.Password,
+        }
+
+        this.user.registration(reqdata).subscribe((response:any)=>{
+          console.log(response)
+          this._snackbar.open('Registration Sucessfull...','',{
+            duration: this.durationInSeconds * 800,
+            verticalPosition: 'top',
+            horizontalPosition: 'center',
+          });
+        }, (error: any) => {
+          console.log(error);
+        })
     }
 
     onReset() {
         this.submitted = false;
         this.registerForm.reset();
+    }
+
+    ShowPassword() {
+      this.hide = !this.hide;
     }
 
     selectedValue!: string;

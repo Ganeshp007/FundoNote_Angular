@@ -2,6 +2,13 @@
 .Main-body{
     display: flex;
     flex-direction: row;
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    transform: translate(-17%,-17%);
+    width: 1000px;
+    padding: 17px;
+    height: 90%;
 }
 
 .MainContainer{
@@ -83,11 +90,11 @@
     display: flex;
     flex-direction: row;
     position: fixed;
-    top: 88%;
-    left: 76%;
+    top: 89%;
+    left: 64.5%;
     transform: translate(-50%,-50%);
     width: 100%;
-    column-gap: 24%;
+    column-gap: 35%;
     color: gray;
 }
 

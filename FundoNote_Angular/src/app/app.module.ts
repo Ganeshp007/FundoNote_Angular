@@ -10,19 +10,24 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import {FormsModule} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { LoginComponent } from './Components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ForgetPasswordComponent } from './Components/forget-password/forget-password.component';
+import { EmailExistsComponent } from './Components/email-exists/email-exists.component';
+import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
-    ForgetPasswordComponent
+    EmailExistsComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,9 @@ import { ForgetPasswordComponent } from './Components/forget-password/forget-pas
     MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

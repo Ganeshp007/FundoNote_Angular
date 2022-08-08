@@ -10,47 +10,42 @@ interface Language{
 }
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-email-exists',
+  templateUrl: './email-exists.component.html',
+  styleUrls: ['./email-exists.component.scss']
 })
-export class LoginComponent implements OnInit {
-  LoginForm!: FormGroup;
+export class EmailExistsComponent implements OnInit {
+  EmailExistsForm!: FormGroup;
   submitted = false;
-  hide: boolean = true;
   durationInSeconds = 5;
 
   constructor(private formBuilder: FormBuilder , private user: UserService,private _snackbar:MatSnackBar) { }
 
   ngOnInit() {
-      this.LoginForm = this.formBuilder.group({
-          Email: ['', [Validators.required, Validators.email]],
-          Password: ['', [Validators.required, Validators.minLength(8)]],
+      this.EmailExistsForm = this.formBuilder.group({
+        Email: ['', [Validators.required, Validators.email]]
       });
   }
   // convenience getter for easy access to form fields
-  get f() { return this.LoginForm.controls; }
+  get f() { return this.EmailExistsForm.controls; }
 
   onSubmit() {
       this.submitted = true;
 
       // stop here if form is invalid
-      if (this.LoginForm.invalid) {
+      if (this.EmailExistsForm.invalid) {
           return;
       }
-      console.log(this.LoginForm.value);
+      console.log(this.EmailExistsForm.value);
 
-      console.log(this.LoginForm.value);
+      console.log(this.EmailExistsForm.value);
         let reqdata={
-          Firstname: this.LoginForm.value.FirstName,
-          Lastname: this.LoginForm.value.LastName,
-          Email: this.LoginForm.value.Email,
-          Password: this.LoginForm.value.Password,
+          Email: this.EmailExistsForm.value.Email
         }
 
-        this.user.login(reqdata).subscribe((response:any)=>{
+        this.user.FindEmail(reqdata).subscribe((response:any)=>{
           console.log(response);
-          this._snackbar.open('Login Sucessfull...','',{
+          this._snackbar.open('Reset Password Link Sent Sucessfully...','',{
             duration: this.durationInSeconds * 800,
             verticalPosition: 'top',
             horizontalPosition: 'center',
@@ -62,11 +57,7 @@ export class LoginComponent implements OnInit {
 
   onReset() {
       this.submitted = false;
-      this.LoginForm.reset();
-  }
-
-  ShowPassword() {
-    this.hide = !this.hide;
+      this.EmailExistsForm.reset();
   }
 
   selectedValue!: string;
@@ -77,5 +68,4 @@ export class LoginComponent implements OnInit {
     {value: 'Hindi-2', viewValue: 'Hindi'},
   ];
   selectedLang = this.Language[0].value;
-
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/Services/userService/user.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 
 interface Language{
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
   hide: boolean = true;
   durationInSeconds = 5;
 
-  constructor(private formBuilder: FormBuilder , private user: UserService,private _snackbar:MatSnackBar) { }
+  constructor(private formBuilder: FormBuilder , private user: UserService,private _snackbar:MatSnackBar,private router: Router) { }
 
   ngOnInit() {
       this.LoginForm = this.formBuilder.group({
@@ -55,6 +56,7 @@ export class LoginComponent implements OnInit {
             verticalPosition: 'top',
             horizontalPosition: 'center',
           });
+          this.router.navigateByUrl('/dashboard')
         }, (error: any) => {
           console.log(error);
         })

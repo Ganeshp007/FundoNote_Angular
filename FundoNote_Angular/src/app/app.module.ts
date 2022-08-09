@@ -12,6 +12,11 @@ import {FormsModule} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
 
 
 import { AppComponent } from './app.component';
@@ -20,6 +25,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EmailExistsComponent } from './Components/email-exists/email-exists.component';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +33,8 @@ import { ResetPasswordComponent } from './Components/reset-password/reset-passwo
     RegistrationComponent,
     LoginComponent,
     EmailExistsComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +49,12 @@ import { ResetPasswordComponent } from './Components/reset-password/reset-passwo
     ReactiveFormsModule,
     MatSelectModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

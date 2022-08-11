@@ -53,7 +53,7 @@ export class RegistrationComponent implements OnInit {
         this.user.registration(reqdata).subscribe((response:any)=>{
           console.log(response)
           this._snackbar.open('Registration Sucessfull...','',{
-            duration: this.durationInSeconds * 800,
+            duration: this.durationInSeconds * 400,
             verticalPosition: 'top',
             horizontalPosition: 'center',
           });

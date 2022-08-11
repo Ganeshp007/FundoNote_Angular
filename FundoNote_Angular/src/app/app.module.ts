@@ -17,6 +17,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 import { AppComponent } from './app.component';
@@ -26,6 +29,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EmailExistsComponent } from './Components/email-exists/email-exists.component';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { CreateNoteComponent } from './Components/create-note/create-note.component';
+import { GetallNoteComponent } from './Components/getall-note/getall-note.component';
+import { DisplayNoteComponent } from './Components/display-note/display-note.component';
+import { IconsNoteComponent } from './Components/icons-note/icons-note.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +41,11 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
     LoginComponent,
     EmailExistsComponent,
     ResetPasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreateNoteComponent,
+    GetallNoteComponent,
+    DisplayNoteComponent,
+    IconsNoteComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +65,10 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatExpansionModule,
+    MatTooltipModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

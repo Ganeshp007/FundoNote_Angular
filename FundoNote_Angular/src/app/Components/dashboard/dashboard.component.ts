@@ -18,6 +18,5 @@ export class DashboardComponent implements OnInit {
 
   goTo(paramText:string){
     this.selectedMenu = paramText;
-  }
-
+  } 
 }

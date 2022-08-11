@@ -5,13 +5,22 @@ import { RegistrationComponent } from './Components/registration/registration.co
 import { EmailExistsComponent } from './Components/email-exists/email-exists.component';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { GetallNoteComponent } from './Components/getall-note/getall-note.component';
+import { CreateNoteComponent } from './Components/create-note/create-note.component';
+import { DisplayNoteComponent } from './Components/display-note/display-note.component';
+
 
 const routes: Routes = [
   {path:"register", component:RegistrationComponent},
   {path:"login",component:LoginComponent},
   {path:"resetpassword",component:ResetPasswordComponent},
   {path:"emailexists", component:EmailExistsComponent},
-  {path:"dashboard",component:DashboardComponent}
+  {path:"dashboard",component:DashboardComponent,
+  children:[
+    {path:"",redirectTo:"/dashboard/getall-note",pathMatch:'full'},
+    {path:"getall-note",component:GetallNoteComponent}
+  ]
+  },
 ];
 
 @NgModule({

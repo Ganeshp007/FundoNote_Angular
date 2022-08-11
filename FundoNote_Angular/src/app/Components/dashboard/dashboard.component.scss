@@ -3,7 +3,6 @@
     position: relative;
     z-index: 2;
     box-shadow: 0px 1.5px lightgray;
-    
 }
 
 .form-logo{
@@ -33,9 +32,6 @@
     border-radius: 10px;
 }
 
-.form-search{
-}
-
 .search{
    width: 350%; 
    font-size: 3px;
@@ -54,7 +50,8 @@
 }
 
 ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
-    background-color: whitesmoke;
+    background-color: white;
+    box-shadow: 0px 1px 2px 0.5px darkgray;    
     border-radius: 10px !important;
   }
 
@@ -67,5 +64,5 @@
 }
 
 .onActive{
-    background-color: #FEEFE2;
+    background-color:  #FEEFC3;
 }

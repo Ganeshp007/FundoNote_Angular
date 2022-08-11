@@ -1,0 +1,61 @@
+<div class="note">
+        <form [formGroup]="createNoteForm" (ngSubmit)="onSubmit()">
+
+                <div class="create-note-header" *ngIf="notecard">
+                        <input class="create-note" id="btn1" type="text" placeholder="Title" formControlName="title" autocomplete="off" />
+                        <button mat-icon-button class="profile-icon" matTooltip="Pin">
+                                <img src="../../../assets/Dasboard/pin.png" />
+                        </button>
+                </div>
+                <div class="create-note-body">
+                        <textarea class="create-note" id="btn2" type="text" (click)="openNoteCard()" formControlName="description"
+                                placeholder="Take a note..." autocomplete="off" ></textarea>
+                </div>
+                <div class="create-note-footer" *ngIf="notecard">
+                        <div class="create-note-btn">
+                                <button mat-icon-button matTooltip="Reminde me">
+                                        <img src="../../../assets/Dasboard/add_reminder.png" />
+                                </button>
+                                <button mat-icon-button matTooltip="Collaborator" class="header-icon">
+                                        <img src="../../../assets/Dasboard/add_person.png" />
+                                </button>
+                                <button mat-icon-button matTooltip="Background options" class="bg-color" [matMenuTriggerFor]="vertebrates">
+                                        <img src="../../../assets/Dasboard/color.png" />
+                                </button>
+                                <button mat-icon-button matTooltip="Add image">
+                                        <img src="../../../assets/Dasboard/add_image.png" />
+                                </button>
+                                <button mat-icon-button matTooltip="Archive">
+                                        <img src="../../../assets/Dasboard/archive.png" />
+                                </button>
+                                <button mat-icon-button matTooltip="More">
+                                        <img src="../../../assets/Dasboard/more.png" />
+                                </button>
+                                <button mat-icon-button matTooltip="Undo">
+                                        <img src="../../../assets/Dasboard/undo.png" />
+                                </button>
+                                <button mat-icon-button matTooltip="Redo">
+                                        <img src="../../../assets/Dasboard/redo.png" />
+                                </button>
+                        </div>
+                        <button mat-button matTooltip="Close" (click)="closecard()" (click)="onSubmit()" class="close-card">Close</button>
+                </div>
+                <mat-menu #vertebrates="matMenu" onselect="onColorseclect()">
+                        <button mat-menu-item >Fishes</button>
+                        <button mat-menu-item >Amphibians</button>
+                        <button mat-menu-item >Reptiles</button>
+                        <button mat-menu-item>Birds</button>
+                        <button mat-menu-item>Mammals</button>
+                </mat-menu>
+                
+        </form>
+
+</div>
+
+<script>
+        const Textarea =document.querySelector("textarea");
+        Textarea.addEventListener("keyup",e => {
+                let scHeight=e.target.document.documentElement.scrollTop;
+                console.log(scHeight)
+        });
+</script>

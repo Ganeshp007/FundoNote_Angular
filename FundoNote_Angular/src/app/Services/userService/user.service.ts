@@ -8,9 +8,9 @@ import { HttpService } from '../httpService/http.service';
 
 export class UserService {
 
-  token:any;
+  // token:any;
   constructor(private httpService: HttpService) { 
-    this.token=localStorage.getItem("token");
+    // this.token=localStorage.getItem('token');
   }
 
   registration(reqdata: any)

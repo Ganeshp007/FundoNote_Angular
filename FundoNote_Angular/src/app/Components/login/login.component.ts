@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/Services/userService/user.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { Token } from '@angular/compiler';
 
 
 interface Language{
@@ -43,16 +44,15 @@ export class LoginComponent implements OnInit {
 
       console.log(this.LoginForm.value);
         let reqdata={
-          Firstname: this.LoginForm.value.FirstName,
-          Lastname: this.LoginForm.value.LastName,
           Email: this.LoginForm.value.Email,
           Password: this.LoginForm.value.Password,
         }
 
         this.user.login(reqdata).subscribe((response:any)=>{
           console.log(response);
+          localStorage.setItem("token",response.data);
           this._snackbar.open('Login Sucessfull...','',{
-            duration: this.durationInSeconds * 800,
+            duration: this.durationInSeconds * 400,
             verticalPosition: 'top',
             horizontalPosition: 'center',
           });

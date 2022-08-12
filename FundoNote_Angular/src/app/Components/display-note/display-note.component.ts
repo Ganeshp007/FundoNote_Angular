@@ -7,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DisplayNoteComponent implements OnInit {
  
+  @Input() NoteList:any;
+
   constructor() { }
 
   ngOnInit(): void {

@@ -6,8 +6,6 @@ import { EmailExistsComponent } from './Components/email-exists/email-exists.com
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { GetallNoteComponent } from './Components/getall-note/getall-note.component';
-import { CreateNoteComponent } from './Components/create-note/create-note.component';
-import { DisplayNoteComponent } from './Components/display-note/display-note.component';
 
 
 const routes: Routes = [

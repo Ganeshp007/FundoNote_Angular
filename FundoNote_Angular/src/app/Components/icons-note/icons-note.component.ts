@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./icons-note.component.scss']
 })
 export class IconsNoteComponent implements OnInit {
+  notecard: boolean=false;
+  // @Input() Notecard:any;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  
 }

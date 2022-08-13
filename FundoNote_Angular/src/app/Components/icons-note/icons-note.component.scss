@@ -1,0 +1,18 @@
+.create-note-footer{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3px;
+    padding-bottom: 2px;
+    overflow: hidden; 
+    white-space: nowrap;
+}
+
+.create-note-btn{
+    margin-left: 1px;
+    max-width: 100%;
+}
+
+.create-note-btn button{
+    margin-right: -2px;
+}
+

@@ -46,8 +46,8 @@
                 <mat-nav-list class="menu-items">
                     <a mat-list-item style="border-radius: 10px 40px 40px 10px;" (click)="goTo('Notes')"[ngClass]="{'onActive':selectedMenu == 'Notes'}"><img class="sidenav-icon"
                             src="../../../assets/Dasboard/lightbulb.png">Notes</a>
-                    <a mat-list-item style="border-radius: 10px 40px 40px 10px;" (click)="goTo('Reminders')"[ngClass]="{'onActive':selectedMenu == 'Reminders'}"><img class="sidenav-icon"
-                            src="../../../assets/Dasboard/notification.png">Reminders</a>
+                    <a mat-list-item style="border-radius: 10px 40px 40px 10px;" (click)="goTo('Reminders')" [ngClass]="{'onActive':selectedMenu == 'Reminders'}"><img class="sidenav-icon"
+                            src="../../../assets/Dasboard/notification.png" >Reminders</a>
                     <a mat-list-item style="border-radius: 10px 40px 40px 10px;" (click)="goTo('Edit Labels')"[ngClass]="{'onActive':selectedMenu == 'Edit Labels'}"><img class="sidenav-icon"
                             src="../../../assets/Dasboard/edit.png">Edit Labels</a>
                     <a mat-list-item style="border-radius: 10px 40px 40px 10px;" (click)="goTo('Archive')"[ngClass]="{'onActive':selectedMenu == 'Archive'}"><img class="sidenav-icon"
@@ -58,7 +58,7 @@
             </mat-sidenav>
             <mat-sidenav-content>
                 <div style="height:91.8vh; background-color: white;">
-                    <router-outlet></router-outlet>
+                    <router-outlet ></router-outlet>
                 </div>
             </mat-sidenav-content>
         </mat-sidenav-container>

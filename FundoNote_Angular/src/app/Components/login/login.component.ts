@@ -52,9 +52,7 @@ export class LoginComponent implements OnInit {
           console.log(response);
           localStorage.setItem("token",response.data);
           this._snackbar.open('Login Sucessfull...','',{
-            duration: this.durationInSeconds * 400,
-            verticalPosition: 'top',
-            horizontalPosition: 'center',
+            duration: this.durationInSeconds * 400
           });
           this.router.navigateByUrl('/dashboard')
         }, (error: any) => {

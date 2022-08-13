@@ -1,6 +1,8 @@
 import { Component, OnInit ,ViewEncapsulation} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NoteService } from 'src/app/Services/noteService/note.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-create-note',
@@ -9,12 +11,13 @@ import { NoteService } from 'src/app/Services/noteService/note.service';
   encapsulation: ViewEncapsulation.None
 })
 export class CreateNoteComponent implements OnInit {
-  createNoteForm!: FormGroup;
+  createNoteForm: FormGroup;
   submitted = false;
   notecard: boolean=false;
-  color!:string;
+  color:string;
+  durationInSeconds = 5;
   
-  constructor(private formBuilder: FormBuilder, private note: NoteService) { }
+  constructor(private formBuilder: FormBuilder, private note: NoteService,private _snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.createNoteForm = this.formBuilder.group({
@@ -43,8 +46,11 @@ export class CreateNoteComponent implements OnInit {
 
        this.note.createNote(reqdata).subscribe((response:any)=>{
          console.log(response)
-       }, (error: any) => {
-         console.log(error);
+         this._snackbar.open('Note Created Sucessfully...','',{
+          duration: this.durationInSeconds * 400,
+        });
+      }, (error: any) => {
+        console.log(error);
        })
       this.onReset();
    }
@@ -52,7 +58,11 @@ export class CreateNoteComponent implements OnInit {
    onReset() {
     this.submitted = false;
     this.createNoteForm.reset();
-}
+  }
+
+  onReload(){
+    location.reload();
+  }
 
   openNoteCard(): void{
     this.notecard=true;
@@ -66,6 +76,5 @@ export class CreateNoteComponent implements OnInit {
   {
     this.color=color;
   }
-
   
 }

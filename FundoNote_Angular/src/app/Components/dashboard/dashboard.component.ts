@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,7 @@ export class DashboardComponent implements OnInit {
   selectedMenu:any='Notes';
 
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -19,4 +20,8 @@ export class DashboardComponent implements OnInit {
   goTo(paramText:string){
     this.selectedMenu = paramText;
   } 
+
+  onReminder(){
+    this.router.navigateByUrl('/login');
+  }
 }

@@ -51,8 +51,6 @@ export class ResetPasswordComponent implements OnInit {
           console.log(response);
           this._snackbar.open('Password Reset Sucessfull...','',{
             duration: this.durationInSeconds * 400,
-            verticalPosition: 'top',
-            horizontalPosition: 'center',
           });
         }, (error: any) => {
           console.log(error);

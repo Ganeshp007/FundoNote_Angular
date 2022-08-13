@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/Services/userService/user.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 interface Language{
   value: string;
@@ -21,7 +22,7 @@ export class RegistrationComponent implements OnInit {
     hide: boolean = true;
     durationInSeconds = 5;
 
-    constructor(private formBuilder: FormBuilder, private user: UserService,private _snackbar:MatSnackBar) { }
+    constructor(private formBuilder: FormBuilder, private user: UserService,private _snackbar:MatSnackBar,private router: Router) { }
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
@@ -54,9 +55,8 @@ export class RegistrationComponent implements OnInit {
           console.log(response)
           this._snackbar.open('Registration Sucessfull...','',{
             duration: this.durationInSeconds * 400,
-            verticalPosition: 'top',
-            horizontalPosition: 'center',
           });
+          this.router.navigateByUrl('/login')
         }, (error: any) => {
           console.log(error);
         })

@@ -1,17 +1,15 @@
 <div class="display-note row">
     <div *ngFor="let note of NoteList" class="column">
-        <mat-card class="note-card ">
-            <mat-card-title class="note-title" style="font-size:20px;" >
+        <mat-card class="note-card " mat-dialog-container>
+            <mat-card-title class="note-title" style="font-size:20px;" (click)="openDialog()">
                 {{note.title}}
             </mat-card-title>
-            <mat-card-content class="note-description" style="font-size: 15px; margin-top:15px">
+            <mat-card-content class="note-description" (click)="openDialog()">
                 <p>{{note.description}}</p>
             </mat-card-content>
+            <mat-card-footer class="icons">
+                    <app-icons-note ></app-icons-note>        
+            </mat-card-footer>
         </mat-card>
     </div>
-<<<<<<< HEAD
 </div>
-=======
-</div>
-
->>>>>>> a4c7aac (Added: UC6_ Added Create note getall note and Display note_using PC datasharing via input)

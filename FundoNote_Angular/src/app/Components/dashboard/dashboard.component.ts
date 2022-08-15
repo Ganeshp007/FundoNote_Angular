@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,11 +9,10 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  searchTerm : String ="";
   selectedMenu:any='Notes';
+  durationInSeconds=5;
 
-
-  constructor(private router:Router) { }
+  constructor(private router:Router,private _snackbar: MatSnackBar) { }
 
   ngOnInit(): void {
   }

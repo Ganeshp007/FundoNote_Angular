@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
           Email: ['', [Validators.required, Validators.email]],
           Password: ['', [Validators.required, Validators.minLength(8)]],
       });
+      localStorage.removeItem('token');
   }
   // convenience getter for easy access to form fields
   get f() { return this.LoginForm.controls; }
@@ -40,8 +41,7 @@ export class LoginComponent implements OnInit {
       if (this.LoginForm.invalid) {
           return;
       }
-      console.log(this.LoginForm.value);
-
+      
       console.log(this.LoginForm.value);
         let reqdata={
           Email: this.LoginForm.value.Email,
@@ -52,11 +52,16 @@ export class LoginComponent implements OnInit {
           console.log(response);
           localStorage.setItem("token",response.data);
           this._snackbar.open('Login Sucessfull...','',{
-            duration: this.durationInSeconds * 400
+            duration: this.durationInSeconds * 400,
+            panelClass:['sucessSnackbar']
           });
           this.router.navigateByUrl('/dashboard')
         }, (error: any) => {
           console.log(error);
+          this._snackbar.open('Incorrect Email or Password !!','',{
+            duration: this.durationInSeconds * 400,
+            panelClass:['errorSnackbar'],
+            });
         })
   }
 

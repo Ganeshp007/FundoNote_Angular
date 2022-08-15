@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import { IconsNoteComponent } from '../icons-note/icons-note.component';
+import { UpdateNoteComponent } from '../update-note/update-note.component';
 
 @Component({
   selector: 'app-display-note',
@@ -11,16 +11,18 @@ export class DisplayNoteComponent implements OnInit {
  
   @Input() NoteList:any;
   
+  notedata:any;
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-   notecard:boolean=false;
+  notecard:boolean=false;
+
   openDialog() {
-    this.dialog.open(IconsNoteComponent,{
+    this.dialog.open(UpdateNoteComponent,{
       width: '45%',
-      height: '30%',
+      height: 'auto',
     });
     this.notecard=true;
   }

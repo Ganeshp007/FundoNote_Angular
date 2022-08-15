@@ -23,6 +23,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatGridListModule} from '@angular/material/grid-list';
 
+import { AuthguardService } from './Services/authguardService/authguard.service';
 
 
 import { AppComponent } from './app.component';
@@ -36,6 +37,7 @@ import { CreateNoteComponent } from './Components/create-note/create-note.compon
 import { GetallNoteComponent } from './Components/getall-note/getall-note.component';
 import { DisplayNoteComponent } from './Components/display-note/display-note.component';
 import { IconsNoteComponent } from './Components/icons-note/icons-note.component';
+import { UpdateNoteComponent } from './Components/update-note/update-note.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { IconsNoteComponent } from './Components/icons-note/icons-note.component
     CreateNoteComponent,
     GetallNoteComponent,
     DisplayNoteComponent,
-    IconsNoteComponent
+    IconsNoteComponent,
+    UpdateNoteComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +78,7 @@ import { IconsNoteComponent } from './Components/icons-note/icons-note.component
     MatDialogModule,
     MatGridListModule
   ],
-  providers: [],
+  providers: [AuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,16 +6,17 @@ import { EmailExistsComponent } from './Components/email-exists/email-exists.com
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { GetallNoteComponent } from './Components/getall-note/getall-note.component';
-import { DisplayNoteComponent } from './Components/display-note/display-note.component';
-import { IconsNoteComponent } from './Components/icons-note/icons-note.component';
+import { AuthenticationGuard } from './Auth_Guard/authentication.guard';
+
 
 
 const routes: Routes = [
   {path:"register", component:RegistrationComponent},
+  {path:'', redirectTo:"/login", pathMatch:'full'},
   {path:"login",component:LoginComponent},
   {path:"resetpassword",component:ResetPasswordComponent},
   {path:"emailexists", component:EmailExistsComponent},
-  {path:"dashboard",component:DashboardComponent,
+  {path:"dashboard",component:DashboardComponent,canActivate:[AuthenticationGuard],
   children:[
     {path:"",redirectTo:"/dashboard/getall-note",pathMatch:'full'},
     {path:"getall-note",component:GetallNoteComponent}

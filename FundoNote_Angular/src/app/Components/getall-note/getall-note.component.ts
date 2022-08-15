@@ -10,14 +10,14 @@ export class GetallNoteComponent implements OnInit {
 
   notesArray:any;
   notesData:any;
+  durationInSeconds = 5;
 
   message:any;
   public suscription:any;
-
   constructor(private noteService: NoteService) { }
 
-  ngOnInit(): void {
-    this.getallNotes();
+  ngOnInit(): void {  
+   this.getallNotes();
   }
   
   getallNotes()
@@ -27,8 +27,11 @@ export class GetallNoteComponent implements OnInit {
       this.notesArray=request.data;
       this.notesArray.reverse();
       console.log("Note Array",this.notesArray);
-    }, (error: any) => {
+    }, 
+    
+    (error: any) => {
       console.log(error);
     })
+
   }
 }

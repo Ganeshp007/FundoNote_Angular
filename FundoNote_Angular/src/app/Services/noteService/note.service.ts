@@ -25,7 +25,7 @@ export class NoteService {
       })
     }
 
-    return this.httpService.postservice('/Note/AddNote',reqdata,true,header)
+    return this.httpService.postservice('/Note/AddNote',reqdata,true,header);
   }
 
   getallNote()
@@ -37,6 +37,18 @@ export class NoteService {
       })
     }
 
-    return this.httpService.getservice('/Note/GetAllNote',true,header)
+    return this.httpService.getservice('/Note/GetAllNote',true,header);
+  }
+
+  updateNote(updatedata:any)
+  {
+    let header = {
+      headers:new HttpHeaders({
+        'Content-type':'application/json',
+        'Authorization':"Bearer "+this.token
+      })
+    }
+
+    return this.httpService.postservice('/Note/GetAllNote',updatedata,true,header);
   }
 }

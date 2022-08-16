@@ -33,9 +33,10 @@ export class CreateNoteComponent implements OnInit {
    onSubmit() {
        this.submitted = true;
 
-       // stop here if form is invalid
-       if (this.createNoteForm.invalid) {
-           return;
+       // stop here if form is invalid or there are no inputs from user
+       if (this.createNoteForm.invalid || !this.createNoteForm.valueChanges) 
+       {
+         return;
        }
        console.log(this.createNoteForm.value);
        let reqdata={
@@ -49,10 +50,11 @@ export class CreateNoteComponent implements OnInit {
          this._snackbar.open('Note Created Sucessfully...','',{
           duration: this.durationInSeconds * 400,
         });
+        this.onReset();
+        this.onReload();
       }, (error: any) => {
         console.log(error);
        })
-      this.onReset();
    }
 
    onReset() {

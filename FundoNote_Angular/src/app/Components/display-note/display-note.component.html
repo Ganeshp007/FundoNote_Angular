@@ -1,10 +1,10 @@
 <div class="display-note row">
     <div *ngFor="let note of NoteList" class="column">
         <mat-card class="note-card " mat-dialog-container>
-            <mat-card-title class="note-title" style="font-size:20px;" (click)="openDialog()">
+            <mat-card-title class="note-title" (click)="openDialog(note)">
                 {{note.title}}
             </mat-card-title>
-            <mat-card-content class="note-description" (click)="openDialog()">
+            <mat-card-content class="note-description" (click)="openDialog(note)">
                 <p>{{note.description}}</p>
             </mat-card-content>
             <mat-card-footer class="icons">

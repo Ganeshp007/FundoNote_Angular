@@ -1,10 +1,12 @@
-<div class="dialog-body">
-        <mat-card-title style="height: 30px;">update-note works!</mat-card-title>
-        <mat-card-content style="min-height: 50px;">
-            wedwpodj
+<form class="dialog-body" form [formGroup]="updateNoteForm" (ngOnChanges)="onSubmit()">
+        <mat-card-title>
+            <input matInput class="note-title" value={{notedata.title}}>
+        </mat-card-title>
+        <mat-card-content>
+            <input matInput class="note-description" value={{notedata.description}} >
         </mat-card-content>
         <mat-card-footer>
             <app-icons-note></app-icons-note>    
         </mat-card-footer>
-</div>
+</form>
     

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { NoteService } from 'src/app/Services/noteService/note.service';
 
 @Component({
@@ -14,7 +16,7 @@ export class GetallNoteComponent implements OnInit {
 
   message:any;
   public suscription:any;
-  constructor(private noteService: NoteService) { }
+  constructor(private noteService: NoteService,private _snackbar: MatSnackBar,private router: Router) { }
 
   ngOnInit(): void {  
    this.getallNotes();
@@ -31,6 +33,11 @@ export class GetallNoteComponent implements OnInit {
     
     (error: any) => {
       console.log(error);
+      this._snackbar.open('User Session Expired !!  Please Relogin...','',{
+        duration: this.durationInSeconds * 400,
+        panelClass:['errorSnackbar']
+      });
+      this.router.navigateByUrl('/login');
     })
 
   }

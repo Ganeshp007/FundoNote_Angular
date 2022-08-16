@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
 
 @Component({
@@ -18,12 +18,14 @@ export class DisplayNoteComponent implements OnInit {
   }
 
   notecard:boolean=false;
-
-  openDialog() {
+  openDialog(note) {
     this.dialog.open(UpdateNoteComponent,{
       width: '45%',
       height: 'auto',
+      autoFocus:false,
+      data:note,
     });
+    
     this.notecard=true;
   }
 
